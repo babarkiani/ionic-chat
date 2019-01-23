@@ -60,6 +60,75 @@ export class ApiProvider {
 
 
 
+  // :::::::::::::::::::::::::::::::::::::: Categories ::::::::::::::::::::::::::::::::::::::::::::
+
+  getCategories() {
+    return this.afs.collection('category').snapshotChanges();
+  }
+
+  getSubCategorie(id) {
+    return this.afs.collection('subCategory', ref => ref.where('categoryId', '==', id)).snapshotChanges();
+  }
+
+  getAllSubCategories() {
+    return this.afs.collection('subCategory').snapshotChanges();
+  }
+
+  // ::::::::::::::::::::::::::::: get Workers ::::::::::::::::::::::::::::::::::::::::::
+
+  getWorkers(id) {
+    return this.afs.collection('workers', ref => ref.where('categoryId', '==', id)).snapshotChanges();
+  }
+
+  getWorkerById(id) {
+    return this.afs.doc('workers/' + id).valueChanges();
+  }
+
+  getAllWorkers(id) {
+    return this.afs.collection('workers', ref => ref.where('categoryId', '==', id)).snapshotChanges();
+  }
+
+  getWorkerProfile(id) {
+    return this.afs.doc('workers/' + id).snapshotChanges();
+  }
+
+  updateWorker(id, data) {
+    return this.afs.doc('workers/' + id).update(data);
+  }
+
+  updateWorkerLocation(id, data) {
+    return this.afs.doc('workers/' + id).update(data);
+  }
+
+  checkWorker(email, password) {
+    return this.afs.collection('workers', ref => ref.where('email', '==', email).where('password', '==', password)).valueChanges();
+  }
+
+  // ::::::::::::::::::::::::::::: Posts/Orders ::::::::::::::::::::::::::::::::::::::::
+
+  createPost(data) {
+    return this.afs.collection('posts').add(data);
+  }
+
+  getPosts(id) {
+    return this.afs.collection('posts', ref => ref.where('customerId', '==', id).where('status', '==', 'active')).snapshotChanges();
+  }
+
+  getCompletedPosts(id) {
+    return this.afs.collection('posts', ref => ref.where('customerId', '==', id).where('postStatus', '==', 'completed')).snapshotChanges();
+  }
+
+  getCompletedPosts2(id) {
+    return this.afs.collection('posts', ref => ref.where('workerId', '==', id).where('postStatus', '==', 'completed')).snapshotChanges();
+  }
+
+  getBooking(id) {
+    return this.afs.doc('posts/' + id).snapshotChanges();
+  }
+
+  updatePost(id, data) {
+    return this.afs.doc('posts/' + id).update(data);
+  }
 
   // ::::::::::::::::::::::::::::::::::::::::::::: Provider ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -78,6 +147,17 @@ export class ApiProvider {
   deleteOrderPost(id) {
     return this.afs.doc('posts/' + id).delete();
   }
+
+  // ::::::::::::::::::::::::::::::::::::::::: Review ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+  createReview(data) {
+    return this.afs.collection('review').add(data);
+  }
+
+  getReview(id) {
+    return this.afs.collection('review', ref => ref.where('workerId', '==', id)).snapshotChanges();
+  }
+
   // ::::::::::::::::::::::::::::::::::::::::::: CHAT :::::::::::::::::::::::::::::::::::::::::::::
 
   checkChatIfExistsWorker(id, uid) {
@@ -98,6 +178,24 @@ export class ApiProvider {
 
   getReceiverChats(id) {
     return this.afs.collection('chat', ref => ref.where('receiverId', '==', id)).snapshotChanges();
+  }
+
+  // ::::::::::::::::::::::::::::::::::::::::::::::::::::: New Posts ::::::::::::::::::::::::::::::::::::::::::::
+
+  createNewPost(data) {
+    return this.afs.collection('newposts').add(data);
+  }
+
+  getNewPostsRequests() {
+    return this.afs.collection('newposts', ref => ref.where('status', '==', 'active')).snapshotChanges();
+  }
+
+  getNewPostById(id) {
+    return this.afs.doc('newposts/' + id).snapshotChanges();
+  }
+
+  deletePost(id) {
+    return this.afs.doc('newposts/' + id).delete();
   }
 
   // :::::::::::::::::::::::::::::::::::::::::::::: Account switch ::::::::::::::::::::::::::::::::::::::::::::::
@@ -169,6 +267,7 @@ export class ApiProvider {
   getPrivacy() {
     return this.afs.doc('settings/privacy').valueChanges();
   }
+
 
 }
 

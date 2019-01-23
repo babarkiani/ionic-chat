@@ -14,6 +14,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const firebase = {
+  apiKey: "AIzaSyAbZplqw7rUDD2Nha-hkNI8-EAHh0J771c",
+  authDomain: "handyman-ea0e1.firebaseapp.com",
+  databaseURL: "https://handyman-ea0e1.firebaseio.com",
+  projectId: "handyman-ea0e1",
+  storageBucket: "handyman-ea0e1.appspot.com",
+  messagingSenderId: "221396946660"
+}
 @NgModule({
   declarations: [
     MyApp,
@@ -27,6 +41,11 @@ import { ApiProvider } from '../providers/api/api';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

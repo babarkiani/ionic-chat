@@ -52,15 +52,15 @@ page-chat-screen {
            // background: $thime-color;
             margin-left: auto;
             h2 {
-                color: $white-color;
+                color: white;
             }
             p {
-                color: $white-color;
+                color: white;
             }
         }
         &.received {
             border-bottom-left-radius: 0;
-            background: $white-color;
+            background: white;
             margin-right: auto;
         }
         h2 {
@@ -75,7 +75,7 @@ page-chat-screen {
         }
     }
     .fixed-bottom {
-        background: $white-color;
+        background: white;
         padding: 3px 2px;
         .row {
             .col {
@@ -115,7 +115,7 @@ page-chat-screen {
                     margin: 0;
                     line-height: 44px;
                     height: 44px;
-                    color: $white-color;
+                    color: white;
                     ion-icon {
                         font-size: 2.2rem;
                         line-height: unset;
