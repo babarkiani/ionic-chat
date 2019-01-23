@@ -12,7 +12,133 @@
 
 </ion-header>
 
+<ion-content no-padding>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
-<ion-content padding>
+      </ion-col>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <img src="assets/imgs/logo1.png">
+      </ion-col>
+      <ion-col text-left no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <h6 class="title">LESCO</h6>
+      </ion-col>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 15px; font-family:Arial; color: #444444;">Are You Service Seeker?</p>
+      </ion-col>
+      <!-- <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                 </ion-col> -->
+    </ion-row>
+
+    <ion-row style="
+          position:relative; bottom:20px;">
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 12px; font-family:Arial; color: #494848;">Sign up to post jobs and find local
+          service providers</p>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <button ion-button outline block class="fbButton">
+          <ion-icon class=" fbIcon" name="appname-fb"></ion-icon>
+          <p class="loginWithFacebook" style="color:#465892; font-family:Arial; font-size: 13px;">
+            Sign up with Facebook</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+        <button ion-button block (click)="clickToSignup()">
+          <ion-icon class="mailIcon" name="mail"></ion-icon>
+          <p class="loginWithEmail" style="color:white; font-family:Arial; font-size: 13px;">Sign up with Email</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="color:#444444; font-family:Arial; font-size: 13px;">Already have an account? <a (click)="clickToLoginServiceSeeker()"
+            style="color:#621fd0; font-family:Arial; font-size: 14px; "><b>Login</b></a></p>
+      </ion-col>
+      <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+  <br>
+  <br><br>
+  <ion-grid style="background-color:#F2F1F1">
+
+    <!-- <div no-padding class="Service-provider-inner-div"> -->
+    <ion-row>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 15px; font-family:Arial; color: #444444;">Are You Service Provider?</p>
+      </ion-col>
+      <!-- <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                 </ion-col> -->
+    </ion-row>
+
+    <ion-row style="
+          position:relative; bottom:20px;">
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 12px; font-family:Arial; color: #494848;">Set up account and make your
+          service available for those seeking</p>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+        <button ion-button block (click)="signup()">
+          <!-- <ion-icon class="signUpIcon" name="md-person-add"></ion-icon> -->
+          <p class="signUp" style="color:white; font-family:Arial; font-size: 15px;">Sign up</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+        <button ion-button outline block class="loginButton" (click)="clickToLoginServiceProvider()">
+          <!-- <ion-icon class="loginIcon" name="md-log-in"></ion-icon> -->
+          <p class="loginText" style="color:#621fd0 ;  font-family:Arial; font-size: 15px;">Login</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+
+  </ion-grid>
 
 </ion-content>
